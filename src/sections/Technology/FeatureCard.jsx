@@ -22,7 +22,7 @@ function FeatureCard({
       <div
         className={`w-full md:w-1/2 lg:p-10 flex flex-col justify-center ${contentOrderClass}`}
       >
-        <div className="md:max-w-[430px] mx-auto">
+        <div className="md:max-w-[430px] lg:max-w-md xl:max-w-full mx-auto">
           <h2 className="text-xl font-normal text-gray-800 mb-2">{title}</h2>
           <hr className="border-t border-gray-200 mb-4" />
           <p className=" text-md leading-relaxed">{description}</p>

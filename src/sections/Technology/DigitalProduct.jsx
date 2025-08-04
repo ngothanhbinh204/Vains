@@ -65,7 +65,7 @@ const DigitalProduct = () => {
           </p>
         </div>
       </div>
-      <div className="min-h-screen max-w-1440 mx-auto flex items-center justify-center p-4 sm:p-6">
+      <div className="min-h-screen max-w-1440 mx-auto flex items-center justify-center p-4 sm:p-6 mb-12">
         <div className="flex flex-col gap-10 md:gap-y-10 lg:gap-y-16">
           <FeatureCard
             title="ADVANCED DATA SECURITY"

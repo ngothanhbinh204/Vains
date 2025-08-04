@@ -46,7 +46,7 @@ const CardGrid = () => {
         <div
           key={index}
           ref={(el) => (itemRefs.current[index] = el)}
-          className="min-h-screen py-10 md:p-0 bg-white"
+          className="min-h-screen flex items-center py-10 md:p-0 bg-white"
         >
           <CardItem
             title={item.title}

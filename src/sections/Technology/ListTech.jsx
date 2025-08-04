@@ -60,7 +60,7 @@ const OurProduct = () => {
           </p>
         </div>
       </div>
-      <div className="min-h-screen max-w-1440 mx-auto flex items-center justify-center p-4 sm:p-6">
+      <div className="min-h-screen max-w-1440 mx-auto flex items-center justify-center p-4 sm:p-6 ">
         <CarGrid></CarGrid>
       </div>
     </section>

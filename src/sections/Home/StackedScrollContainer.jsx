@@ -36,16 +36,14 @@ const StackedScrollContainer = ({ children }) => {
       }
     });
 
-    // Tạo trigger đặc biệt cho section cuối cùng
     if (sections[lastIndex]) {
       ScrollTrigger.create({
         trigger: sections[lastIndex],
-        start: "top top", // Khi WhyVains chạm top
-        end: "bottom top", // Đến khi WhyVains scroll qua hoàn toàn
+        start: "top top",
+        end: "bottom top",
         onUpdate: (self) => {
           const progress = self.progress;
 
-          // Khi WhyVains chạm top, 3 sections bắt đầu di chuyển lên theo scroll
           sections.forEach((section, i) => {
             if (i < lastIndex) {
               gsap.set(section, {
@@ -55,7 +53,6 @@ const StackedScrollContainer = ({ children }) => {
           });
         },
         onLeave: () => {
-          // Đảm bảo vị trí cuối cùng
           sections.forEach((section, i) => {
             if (i < lastIndex) {
               gsap.set(section, { y: -window.innerHeight });
@@ -63,7 +60,6 @@ const StackedScrollContainer = ({ children }) => {
           });
         },
         onEnterBack: () => {
-          // Khi scroll ngược lại, reset vị trí
           sections.forEach((section, i) => {
             if (i < lastIndex) {
               gsap.set(section, { y: 0 });

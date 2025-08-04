@@ -6,6 +6,7 @@ import Home from "@/pages/Home";
 import About from "@/pages/About";
 import Technology from "@/pages/Technology";
 import Pricing from "@/pages/Pricing";
+import Contact from "@/pages/Contact";
 
 import { HeaderThemeProvider } from "./context/HeaderThemeContext"; // đường dẫn đúng
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/about" element={<About></About>}></Route>
           <Route path="/pricing" element={<Pricing></Pricing>}></Route>
           <Route path="/technology" element={<Technology></Technology>}></Route>
+          <Route path="/contact" element={<Contact></Contact>}></Route>
         </Routes>
       </MainLayout>
     </HeaderThemeProvider>

@@ -196,7 +196,38 @@ a {
   background-position: 0% 0;
 }
 
+.max-w-1440 {
+  max-width: unset !important;
+}
 
+.max-w-1440 {
+  padding: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .max-w-1440 {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+}
+
+
+@media screen and (min-width: 1280px) {
+  .max-w-1440 {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+}
+
+@media screen and (min-width: 1600px) {
+  .max-w-1440 {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+}
 
 .even-card {
   position: relative;

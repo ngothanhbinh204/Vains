@@ -147,7 +147,7 @@ const Footer = () => {
                         </svg>
                       </span>
                       <span>
-                        132/6 Khu Phố 8, Phường Đa Vinh, Tỉnh Khánh Hòa
+                        132/6 Khu Phố 8, Phường Đô Vinh, Tỉnh Khánh Hòa
                       </span>
                     </div>
                   </div>
@@ -158,10 +158,10 @@ const Footer = () => {
                     Email
                   </h3>
                   <a
-                    href="mailto:meomeovatns@gmail.com"
+                    href="mailto:infovains@gmail.com"
                     className="text-sm hover:text-primary transition-colors"
                   >
-                    meomeovatns@gmail.com
+                    infovains@gmail.com
                   </a>
                 </div>
                 {/* Work Schedule */}
