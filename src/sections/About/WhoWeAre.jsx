@@ -43,25 +43,21 @@ const WhoWeAre = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className=" bg-white relative z-10">
+    <section ref={sectionRef} className=" relative z-10 text-white">
       <div className="relative z-10 max-w-1440 px-4 md:px-6 md:pb-14 mx-auto h-auto flex flex-col">
-        <HeaderSection
-          theme="light"
-          title="WHO WE ARE"
-          headline={
-            <h1 className="text-4xl md:text-5xl lg:text-7xl font-helvetica-light leading-tight">
+        <div className="grid grid-cols-12 gap-y-4 gap-x-6 items-center">
+          <div className="col-span-12 md:col-span-4">
+            <div className="text-primary text-sm font-medium mb-2 tracking-wider">
+              WHO WE ARE
+            </div>
+            <h2 className="text-2xl lg:text-[36px] font-bold mb-5 leading-tight">
               Meet the Founders
-            </h1>
-          }
-          triggerRef={triggerRef}
-          lineRef={lineRef}
-          textRef={textRef}
-        />
-        <div className="mt-12 md:mt-14 lg:mt-20 max-w-full md:max-w-2/6 ml-auto">
-          <p className="text-black leading-[1.5] text-md">
+            </h2>
+          </div>
+          <p className="col-span-12 md:col-span-7 text-md leading-relaxed mb-5">
             This is the space to introduce the team and what makes it special.
             Describe the team culture and work philosophy. To help site visitors
-            connect with the team, add details about team members’ experience
+            connect with the team, add details about team members' experience
             and skills.
           </p>
         </div>

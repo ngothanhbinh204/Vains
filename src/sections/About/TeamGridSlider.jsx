@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import { GoArrowLeft, GoArrowRight } from "react-icons/go";
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
+
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -187,7 +188,31 @@ const TeamGridSlider = () => {
   }, []);
 
   return (
-    <div className="w-full py-16">
+    <div className="w-full flex">
+      {!isMobile && (
+        <div className="flex justify-start gap-9">
+          <button
+            onClick={handlePrev}
+            disabled={isBeginning}
+            className={`custom-prev w-12 h-12 flex items-center justify-center border-2 border-[rgba(75,75,75,1)] rounded-full transition-colors duration-200 ${
+              isBeginning ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+            aria-label="Previous"
+          >
+            <SlArrowLeft size={20} />
+          </button>
+          <button
+            onClick={handleNext}
+            disabled={isEnd}
+            className={`custom-next w-12 h-12 flex items-center justify-center border-2 border-[rgba(75,75,75,1)] rounded-full transition-colors duration-200 ${
+              isEnd ? "opacity-50 cursor-not-allowed" : ""
+            }`}
+            aria-label="Next"
+          >
+            <SlArrowRight size={20} />
+          </button>
+        </div>
+      )}
       <div className="lg:max-w-5xl ml-auto md:px-4">
         {/* Desktop View */}
         {!isMobile && (
@@ -256,32 +281,6 @@ const TeamGridSlider = () => {
           </div>
         )}
       </div>
-
-      {/* Navigation Buttons - Desktop Only */}
-      {!isMobile && (
-        <div className="flex justify-end pr-8 gap-3 mt-4">
-          <button
-            onClick={handlePrev}
-            disabled={isBeginning}
-            className={`custom-prev w-10 h-10 flex items-center justify-center rounded-[6px] border border-black bg-white hover:bg-black hover:text-white transition-colors duration-200 ${
-              isBeginning ? "opacity-50 cursor-not-allowed" : ""
-            }`}
-            aria-label="Previous"
-          >
-            <GoArrowLeft size={20} />
-          </button>
-          <button
-            onClick={handleNext}
-            disabled={isEnd}
-            className={`custom-next w-10 h-10 flex items-center justify-center rounded-[6px] border border-black bg-white hover:bg-black hover:text-white transition-colors duration-200 ${
-              isEnd ? "opacity-50 cursor-not-allowed" : ""
-            }`}
-            aria-label="Next"
-          >
-            <GoArrowRight size={20} />
-          </button>
-        </div>
-      )}
     </div>
   );
 };

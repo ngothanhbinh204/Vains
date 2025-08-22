@@ -21,7 +21,7 @@ export default function About() {
       <MissionSection />
       <Timeline />
       <TestimonialSection />
-      <OutMission />
+      {/* <OutMission /> */}
       <WhoWeAre />
     </>
   );
