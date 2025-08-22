@@ -19,6 +19,42 @@
         url("https://db.onlinewebfonts.com/t/e89eb1cff9eb261b0d77a4dea27f1ef1.svg#Helvetica W01 Light")format("svg");
 }
 
+@font-face {
+    font-family: 'SVN-Gilroy';
+    src: url('../assets/fonts/font_Gilroy_VH_woff2/SVN-Gilroy Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Gilroy';
+    src: url('../assets/fonts/font_Gilroy_VH_woff2/SVN-Gilroy Italic.woff2') format('woff2');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'SVN-Gilroy';
+    src: url('../assets/fonts/font_Gilroy_VH_woff2/SVN-Gilroy Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Gilroy';
+    src: url('../assets/fonts/font_Gilroy_VH_woff2/SVN-Gilroy SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Gilroy';
+    src: url('../assets/fonts/font_Gilroy_VH_woff2/SVN-Gilroy Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
 body {
-    font-family: "Helvetica W01 Roman", "Helvetica W01 Light", "Space Grotesk", sans-serif;
+    /* font-family: "Helvetica W01 Roman", "Helvetica W01 Light", "Space Grotesk", sans-serif; */
+    font-family: "SVN-Gilroy", "Helvetica W01 Roman", "Helvetica W01 Light", "Space Grotesk", sans-serif;
 }
