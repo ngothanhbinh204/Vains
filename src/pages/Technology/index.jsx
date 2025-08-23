@@ -1,20 +1,15 @@
 import MainLayout from "@/components/layout/MainLayout";
-import HeroSection from "@/sections/About/Hero";
+import HeroSection from "@/sections/Shared/Hero";
 import ListTech from "@/sections/Technology/ListTech";
 import DigitalProduct from "@/sections/Technology/DigitalProduct";
-
-import { useHeaderTheme } from "@/context/HeaderThemeContext";
-import { useEffect } from "react";
 export default function Technology() {
-  const { setIsLightBackground } = useHeaderTheme();
-
-  useEffect(() => {
-    setIsLightBackground(true);
-    return () => setIsLightBackground(false);
-  }, []);
   return (
     <>
-      <HeroSection />
+      <HeroSection
+        title="TECHNOLOGY"
+        description="Learn about our core values, our story, and how we balance work, life and everything in between."
+      />
+
       <ListTech></ListTech>
       <DigitalProduct></DigitalProduct>
     </>

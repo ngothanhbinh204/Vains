@@ -102,7 +102,6 @@ const Timeline = () => {
             start: isMobile ? "top 70%" : "top center", // Mobile: bắt đầu muộn hơn
             end: "bottom center",
             scrub: true,
-            markers: true,
           },
         });
 
@@ -144,7 +143,6 @@ const Timeline = () => {
                 start: dotTriggerStart,
                 toggleActions: "play none none reverse",
               },
-              markers: true,
             }
           );
 

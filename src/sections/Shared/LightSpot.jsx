@@ -2,7 +2,7 @@ import React from "react";
 
 const LightSpot = ({
   size = 700,
-  top = 0,
+  top,
   left = 0,
   opacity = 1,
   className = "",

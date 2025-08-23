@@ -38,16 +38,16 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-br z-50 bg-colorBlackTheme  text-white relative">
+    <footer className=" z-50   text-white relative">
       <div className="relative z-10">
         {/* Main Footer Content */}
-        <div className="overflow-hidden md:overflow-visible max-w-1440 relative mx-auto px-4 pt-16">
+        <div className="overflow-x-clip md:overflow-visible max-w-1440 relative mx-auto px-4 pt-16">
           {/* <LightSpot size={850} top="-40%" left="-20%" /> */}
           <LightSpot
             size={850}
-            top="-40%"
+            // top="-40%"
             left="-20%"
-            className="!w-lg lg:!w-[850px] md:left-[-10%] sm:left-[-5%] sm:top-[-20%]"
+            className="!w-lg lg:!w-[850px] md:left-[-10%] sm:left-[-5%] sm:top-[-20%] md:top-[-40%]"
           />
 
           <div className="grid lg:grid-cols-12 gap-8">

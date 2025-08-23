@@ -33,19 +33,6 @@ const TitlePage = (props) => {
           <img className="aspect-video object-cover" src={MemberImg} alt="" />
         </div>
         <div className="absolute inset-0 top-[20%] 2xl:top-[10%]">
-          <div
-            className="gradient-overlay relative w-full h-screen min-h-full overflow-visible"
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              background:
-                "linear-gradient(180deg, rgba(11, 11, 11, 0) 40.87%, #0B0B0B 100%)",
-              pointerEvents: "none",
-              zIndex: 1,
-            }}
-          />
           <PlanetarySystem />
         </div>
       </div>

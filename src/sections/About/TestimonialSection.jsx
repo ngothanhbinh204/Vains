@@ -64,6 +64,24 @@ const TestimonialSection = () => {
       avatar:
         "https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1",
     },
+    {
+      id: 7,
+      rating: 5,
+      text: "This is the space to describe the product. Write a short overview that includes important features, pricing and other relevant info for a potential buyer. Consider adding an image or video to show off the product and entice visitors to make a purchase.",
+      author: "Thomas Lewis",
+      role: "Crypto Blogger, BlockSavvy",
+      avatar:
+        "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1",
+    },
+    {
+      id: 8,
+      rating: 5,
+      text: "This is the space to describe the product. Write a short overview that includes important features, pricing and other relevant info for a potential buyer. Consider adding an image or video to show off the product and entice visitors to make a purchase.",
+      author: "Thomas Lewis",
+      role: "Crypto Blogger, BlockSavvy",
+      avatar:
+        "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1",
+    },
   ];
 
   // Split testimonials into two columns
@@ -97,7 +115,7 @@ const TestimonialSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen relative flex justify-center items-center text-white py-20">
+    <section className=" min-h-screen relative flex justify-center items-center text-white py-20">
       <div className="mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Content */}
@@ -175,7 +193,7 @@ const TestimonialSection = () => {
         </div>
       </div>
       <img
-        className="absolute h-auto w-full lg:w-[40%] left-0 top-1/2 transform -translate-y-1/2 -z-10 rotate-180"
+        className="absolute h-auto w-full lg:w-[40%] left-0 top-2/3 md:top-1/2 transform -translate-y-1/2 -z-10 rotate-180"
         src={ImageBackGround2}
         alt=""
       />

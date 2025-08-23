@@ -4,7 +4,7 @@ import Star from "@/assets/icons/Star.svg";
 
 const TextStatistic = () => {
   return (
-    <section className=" text-white px-4 md:px-8 py-12 lg:py-20">
+    <section className=" text-white px-4 md:px-8">
       <div className=" mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-16 items-center">
           {/* Left side - Statistics description */}
