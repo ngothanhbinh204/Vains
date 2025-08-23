@@ -7,7 +7,7 @@ import PlanetarySystem from "@/sections/Shared/PlanetarySystemBanner";
 const TitlePage = (props) => {
   return (
     <section
-      className="pricing-banner h-full overflow-hidden pt-48 pb-20"
+      className="pricing-banner h-full overflow-hidden pt-48 mb-[70px]"
       style={{ position: "relative", textAlign: "center" }}
     >
       <LightSpot size={700} top="-42%" left="-22%" />
@@ -30,11 +30,7 @@ const TitlePage = (props) => {
           </p>
         </div>
         <div className="box-img w-3/4 max-w-[1440px] h-[auto] rounded-xl overflow-hidden mt-8 z-10">
-          <img
-            className="aspect-video object-cover filter grayscale transition-all duration-500 hover:filter-none hover:grayscale-0"
-            src={MemberImg}
-            alt=""
-          />
+          <img className="aspect-video object-cover" src={MemberImg} alt="" />
         </div>
         <div className="absolute inset-0 top-[20%] 2xl:top-[10%]">
           <div

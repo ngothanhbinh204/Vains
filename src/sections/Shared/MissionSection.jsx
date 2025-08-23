@@ -1,9 +1,11 @@
 import Image from "@/assets/images/mission_member.png";
 import Avatar from "@/assets/images/avt_member.png";
-
+import LightSpot from "@/sections/Shared/LightSpot";
 const MissionSection = () => {
   return (
-    <section className=" text-white py-16 px-4 md:px-8 bg-red">
+    <section className=" relative text-white px-4 md:px-8 bg-red py-12 lg:py-20">
+      <LightSpot size={900} top="-60%" left="70%" />
+
       <div className=" mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-center">
           {/* Left side - Image */}
@@ -12,7 +14,7 @@ const MissionSection = () => {
               <img
                 src={Image}
                 alt="Team collaboration - people working together around a laptop"
-                className="object-cover rounded-lg grayscale mx-auto"
+                className=" rounded-xl mx-auto object-cover "
               />
             </div>
           </div>
@@ -91,7 +93,7 @@ const MissionSection = () => {
 
             {/* Author */}
             <div className="flex items-center gap-3 mt-8 pl-8">
-              <div className="w-12 h-12 rounded-full overflow-hidden bg-gray-600">
+              <div className="w-12 h-12 rounded-full overflow-hidden">
                 <img
                   src={Avatar}
                   alt="Aditya Sofyan"
@@ -101,8 +103,8 @@ const MissionSection = () => {
                 />
               </div>
               <div>
-                <p className="font-semibold text-white">Leo</p>
-                <p className="text-sm text-gray-400">Co-founder</p>
+                <p className="font-semibold text-primary">Leo</p>
+                <p className="text-sm text-white">Co-founder</p>
               </div>
             </div>
           </div>

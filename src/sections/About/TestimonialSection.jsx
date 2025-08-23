@@ -3,6 +3,8 @@ import { gsap } from "gsap";
 import { Star, ArrowRight } from "lucide-react";
 import TestimonialCard from "@/sections/About/TestimonialCard";
 import ButtonLinear from "@/components/ui/ButtonLinear";
+import ImageBackGround2 from "@/assets/images/background2.svg";
+
 const TestimonialSection = () => {
   const leftColumnRef = useRef(null);
   const rightColumnRef = useRef(null);
@@ -95,8 +97,8 @@ const TestimonialSection = () => {
   }, []);
 
   return (
-    <section className="min-h-screen text-white py-20">
-      <div className="container mx-auto px-4">
+    <section className="min-h-screen relative flex justify-center items-center text-white py-20">
+      <div className="mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           {/* Left Content */}
           <div className="lg:col-span-5 h-full flex items-center justify-center">
@@ -127,7 +129,7 @@ const TestimonialSection = () => {
 
           {/* Right Testimonials */}
           <div className="lg:col-span-7">
-            <div className="relative h-[600px] overflow-hidden">
+            <div className="relative h-full max-h-[770px] overflow-hidden">
               {/* Gradient Overlays */}
               <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-colorBlackTheme via-colorBlackTheme to-transparent z-10 pointer-events-none"></div>
               <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-colorBlackTheme via-colorBlackTheme to-transparent z-10 pointer-events-none"></div>
@@ -172,6 +174,11 @@ const TestimonialSection = () => {
           </div>
         </div>
       </div>
+      <img
+        className="absolute h-auto w-full lg:w-[40%] left-0 top-1/2 transform -translate-y-1/2 -z-10 rotate-180"
+        src={ImageBackGround2}
+        alt=""
+      />
     </section>
   );
 };

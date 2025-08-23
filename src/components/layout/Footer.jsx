@@ -38,7 +38,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-br z-50 bg-black  text-white relative">
+    <footer className="bg-gradient-to-br z-50 bg-colorBlackTheme  text-white relative">
       <div className="relative z-10">
         {/* Main Footer Content */}
         <div className="overflow-hidden md:overflow-visible max-w-1440 relative mx-auto px-4 pt-16">

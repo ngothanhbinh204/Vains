@@ -175,15 +175,20 @@ const TeamGridSlider = () => {
   };
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+
+    const handleChange = (e) => {
+      setIsMobile(e.matches);
     };
 
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
+    // init
+    setIsMobile(mediaQuery.matches);
+
+    // listener
+    mediaQuery.addEventListener("change", handleChange);
 
     return () => {
-      window.removeEventListener("resize", checkMobile);
+      mediaQuery.removeEventListener("change", handleChange);
     };
   }, []);
 
@@ -199,7 +204,7 @@ const TeamGridSlider = () => {
             }`}
             aria-label="Previous"
           >
-            <SlArrowLeft size={20} />
+            <SlArrowLeft size={16} />
           </button>
           <button
             onClick={handleNext}
@@ -209,11 +214,11 @@ const TeamGridSlider = () => {
             }`}
             aria-label="Next"
           >
-            <SlArrowRight size={20} />
+            <SlArrowRight size={16} />
           </button>
         </div>
       )}
-      <div className="lg:max-w-5xl ml-auto md:px-4">
+      <div className={`${isMobile ? "w-full" : "md:max-w-[70vw] ml-auto"}`}>
         {/* Desktop View */}
         {!isMobile && (
           <Swiper
@@ -228,7 +233,7 @@ const TeamGridSlider = () => {
             }}
             modules={[Navigation, Pagination, Autoplay]}
             slidesPerView={3}
-            spaceBetween={30}
+            spaceBetween={28}
             navigation={{
               nextEl: ".custom-next",
               prevEl: ".custom-prev",
@@ -240,10 +245,10 @@ const TeamGridSlider = () => {
               },
               1024: {
                 slidesPerView: 3,
-                spaceBetween: 30,
+                spaceBetween: 28,
               },
             }}
-            className="relative !px-4 !py-8"
+            className="relative"
           >
             {teamMembers.map((member, index) => (
               <SwiperSlide key={index}>
@@ -260,14 +265,14 @@ const TeamGridSlider = () => {
 
         {/* Mobile View with Stack Effect */}
         {isMobile && (
-          <div className="block md:hidden">
+          <div className="block md:hidden w-full">
             <StackedScrollContainer>
               {teamMembers.map((member, index) => (
                 <div
                   key={index}
-                  className="min-h-screen flex items-center justify-center p-4 bg-white"
+                  className="min-h-screen flex items-center justify-center p-4"
                 >
-                  <div className="w-full max-w-sm mx-auto">
+                  <div className="w-full mx-auto">
                     <TeamMemberCard
                       member={member}
                       index={index}

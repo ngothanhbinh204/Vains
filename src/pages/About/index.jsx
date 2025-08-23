@@ -19,10 +19,11 @@ export default function About() {
     <>
       <HeroSection />
       <MissionSection />
+      <TextStatistic />
       <Timeline />
+      <WhoWeAre />
       <TestimonialSection />
       {/* <OutMission /> */}
-      <WhoWeAre />
     </>
   );
 }

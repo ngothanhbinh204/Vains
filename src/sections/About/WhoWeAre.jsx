@@ -43,18 +43,21 @@ const WhoWeAre = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className=" relative z-10 text-white">
-      <div className="relative z-10 max-w-1440 px-4 md:px-6 md:pb-14 mx-auto h-auto flex flex-col">
-        <div className="grid grid-cols-12 gap-y-4 gap-x-6 items-center">
+    <section
+      ref={sectionRef}
+      className=" relative z-10 text-white px-4 md:px-6 md:pb-14"
+    >
+      <div className="relative z-10 mx-auto h-auto flex flex-col mb-6 md:mb-12">
+        <div className="grid grid-cols-12 gap-y-4 gap-x-6 items-end">
           <div className="col-span-12 md:col-span-4">
             <div className="text-primary text-sm font-medium mb-2 tracking-wider">
               WHO WE ARE
             </div>
-            <h2 className="text-2xl lg:text-[36px] font-bold mb-5 leading-tight">
+            <h2 className="text-2xl lg:text-[36px] font-bold leading-tight mb-0">
               Meet the Founders
             </h2>
           </div>
-          <p className="col-span-12 md:col-span-7 text-md leading-relaxed mb-5">
+          <p className="col-span-12 md:col-span-7 text-md leading-relaxed mb-0">
             This is the space to introduce the team and what makes it special.
             Describe the team culture and work philosophy. To help site visitors
             connect with the team, add details about team members' experience
@@ -62,7 +65,7 @@ const WhoWeAre = () => {
           </p>
         </div>
       </div>
-      <div className="min-h-screen max-w-1440 mx-auto flex items-center justify-center p-4 sm:p-6">
+      <div className="min-auto mx-auto flex items-center justify-center">
         <TeamGridSlider></TeamGridSlider>
       </div>
     </section>

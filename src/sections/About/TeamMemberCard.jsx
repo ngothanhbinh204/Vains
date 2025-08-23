@@ -1,43 +1,32 @@
 import React from "react";
-import heroImage from "@/assets/images/avt.avif";
+import heroImage from "@/assets/images/member_list.png";
 
-const TeamMemberCard = ({ member, index, isMobile, isOdd, cardRef }) => {
+const TeamMemberCard = ({ member, isMobile, cardRef }) => {
   return (
     <div
       ref={cardRef}
-      className={`${
-        isMobile ? "h-screen w-full mb-4 bg-white" : "flex-shrink-0"
+      className={`card_member text-Textblack object-cover ${
+        isMobile ? "h-screen w-full mb-4" : "flex-shrink-0"
       }`}
     >
-      <div
-        className={`rounded-2xl shadow-itemCus h-full md:h-[600px] relative overflow-hidden transition-all duration-300 ${
-          isOdd ? "bg-white text-black" : "bg-black text-white"
-        }`}
-      >
-        <div className="relative z-10 h-full flex flex-col">
-          <div
-            className={`mb-6 ${
-              isMobile ? "text-center" : ""
-            } space-y-6  p-4 md:p-5 `}
-          >
-            <h3 className="text-xs md:text-md font-medium tracking-widest">
-              {member.name}
-            </h3>
-            <h2 className="text-4xl md:text-3xl font-helvetica-light mb-4">
-              {member.position}
-            </h2>
-            <p className=" text-sm md:text-base leading-relaxed">
-              {member.description}
-            </p>
-          </div>
+      <div className="relative rounded-2xl shadow-itemCus h-full md:h-[530px] overflow-hidden">
+        {/* Ảnh nền */}
+        <img
+          src={heroImage}
+          alt={member.name}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-          <div className="mt-auto h-auto flex justify-center">
-            <img
-              src={heroImage}
-              alt={member.name}
-              className="w-full h-auto object-cover"
-            />
-          </div>
+        <div className="relative z-10 h-full flex flex-col justify-start p-4 md:p-[22px]">
+          <h3 className="text-xs md:text-xl font-medium tracking-widest mb-4">
+            {member.name}
+          </h3>
+          <h2 className="text-4xl md:text-[36px] font-bold mb-2">
+            {member.position}
+          </h2>
+          <p className="text-sm md:text-sm leading-tight">
+            {member.description}
+          </p>
         </div>
       </div>
     </div>
