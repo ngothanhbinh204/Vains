@@ -404,14 +404,7 @@ a {
   inset: 0;
   border-radius: 999px;
   padding: 1px;
-  /* background: linear-gradient(90deg, rgba(252, 178, 54, 0), rgba(155, 255, 249, 1), rgba(66, 195, 231, 0)); */
-  background: linear-gradient(90deg,
-
-      rgba(255, 255, 255, 0.16) 0%,
-      /* vàng mờ dần */
-      rgba(255, 255, 255, 0.16) 100%,
-    );
-
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.16) 100%);
   -webkit-mask:
     linear-gradient(#000 0 0) content-box,
     linear-gradient(#000 0 0);
@@ -426,6 +419,37 @@ a {
   overflow: hidden;
   border-radius: 9999px;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.16) 0%, rgba(14, 49, 54, 0.08) 100%);
+}
+
+.linear-buttonJade::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  padding: 1px;
+  background: linear-gradient(90deg,
+      rgba(23, 66, 62, 1) 0%,
+      rgba(155, 255, 249, 1) 50%,
+      rgba(66, 195, 213, 1) 100%);
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.linear-buttonJade {
+  position: relative;
+  overflow: hidden;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(22, 66, 63, 1) 0%, rgba(56, 168, 160, 1) 100%);
+}
+
+.wrapper_btn_full>div {
+  max-width: 100% !important;
 }
 
 @media (max-width: 768px) {

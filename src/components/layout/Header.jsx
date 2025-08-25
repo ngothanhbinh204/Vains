@@ -1,11 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "../ui/Button";
 import { Spin as Hamburger } from "hamburger-react";
 import Logo from "@/assets/images/VainsLogo.svg";
+import Home from "@/assets/icons/Home.svg";
+import AboutUs from "@/assets/icons/AboutUs.svg";
+import Tech from "@/assets/icons/Code.svg";
+import Pricing from "@/assets/icons/Dollar.svg";
+import Blog from "@/assets/icons/Document.svg";
+
 import ButtonLinear from "@/components/ui/ButtonLinear";
 import { useHeaderTheme } from "@/context/HeaderThemeContext";
 const Header = () => {
@@ -96,6 +102,13 @@ const Header = () => {
     }),
   };
 
+  const navItems = [
+    { label: "Home", to: "/", icon: Home },
+    { label: "About", to: "/about", icon: AboutUs },
+    { label: "Technology", to: "/technology", icon: Tech },
+    { label: "Pricing", to: "/pricing", icon: Pricing },
+    { label: "Blog", to: "/blog", icon: Blog },
+  ];
   return (
     <>
       <motion.header
@@ -467,36 +480,52 @@ const Header = () => {
           </motion.div>
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex gap-8 items-center font-medium">
-            {[
-              { label: "Home", to: "/" },
-              { label: "Technology", to: "/technology" },
-              { label: "Pricing", to: "/Pricing" },
-              { label: "About", to: "/about" },
-              { label: "Blog", to: "/blog" },
-            ].map((item) => (
+          <nav
+            className="hidden lg:flex absolute left-1/2 transform -translate-x-1/2 gap-8 items-center font-medium py-3 px-5 rounded-full border border-[rgba(255,255,255,0.16)]"
+            style={{
+              background:
+                "linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.06) 100%)",
+            }}
+          >
+            {navItems.map((item) => (
               <motion.div key={item.to}>
-                <Link
+                <NavLink
                   to={item.to}
-                  className="relative inline-block group transition-all duration-200"
+                  end
+                  className={({ isActive }) =>
+                    `relative inline-flex items-center gap-2 transition-all duration-200 text-md font-normal ${
+                      isActive
+                        ? "text-white font-medium"
+                        : "text-[rgba(203,203,203,1)] hover:text-white group"
+                    }`
+                  }
                 >
-                  {item.label}
-                  <span
-                    className={`absolute left-0 -bottom-1 h-[1px] w-full scale-x-0 ${
-                      isLightBackground ? "bg-black" : "bg-white"
-                    }  transform origin-left transition-transform duration-300 group-hover:scale-x-100`}
-                  />
-                </Link>
+                  {({ isActive }) => (
+                    <>
+                      {isActive && item.icon && (
+                        <img
+                          src={item.icon}
+                          alt={`${item.label} icon`}
+                          className="w-[18px] h-[18px] object-contain"
+                        />
+                      )}
+                      <span> {item.label}</span>
+                      {!isActive && (
+                        <span className="absolute left-0 -bottom-1 h-[1px] w-full scale-x-0 bg-white transform origin-left transition-transform duration-300 group-hover:scale-x-100" />
+                      )}
+                    </>
+                  )}
+                </NavLink>
               </motion.div>
             ))}
           </nav>
 
-          <div className="flex flex-row gap-5">
+          <div className="hidden md:flex flex-row gap-5">
             <ButtonLinear
               variant="jade_green"
               onClick={() => alert("Button clicked!")}
             >
-              Learn More
+              Contact Us
             </ButtonLinear>
             <ButtonLinear
               showIcon={false}
@@ -509,7 +538,7 @@ const Header = () => {
           </div>
 
           {/* Animated Hamburger Menu */}
-          <div className="md:hidden text-white z-60 relative ">
+          <div className="lg:hidden text-white z-60 relative ">
             <Hamburger
               toggled={isMobileMenuOpen}
               toggle={setIsMobileMenuOpen}
@@ -527,7 +556,7 @@ const Header = () => {
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
-            className={`fixed inset-0 z-[110] md:hidden top-0 left-0 w-full ${
+            className={`fixed inset-0 z-[110] lg:hidden top-0 left-0 w-full ${
               isScrolled ? "backdrop-blur" : ""
             } ${isLightBackground ? "text-black" : "text-white"}`}
             initial="closed"
@@ -903,7 +932,7 @@ const Header = () => {
                   </div>
                   {/* <img src={Logo} alt="Logo" className="h-5" /> */}
                 </a>
-                <div className="md:hidden text-white z-60 relative ">
+                <div className="lg:hidden text-white z-60 relative ">
                   <Hamburger
                     toggled={isMobileMenuOpen}
                     toggle={setIsMobileMenuOpen}
@@ -917,19 +946,7 @@ const Header = () => {
               </motion.div>
 
               <nav className="flex flex-col p-6 space-y-1">
-                {[
-                  {
-                    to: "/technology",
-                    label: "Technology",
-                    color: "bg-blue-400",
-                  },
-                  {
-                    to: "/pricing",
-                    label: "Pricing",
-                    color: "bg-blue-400",
-                  },
-                  { to: "/about", label: "About", color: "bg-green-400" },
-                ].map((item, i) => (
+                {navItems.map((item, i) => (
                   <motion.div
                     key={item.to}
                     custom={i}
@@ -977,16 +994,27 @@ const Header = () => {
                   initial="closed"
                   animate="open"
                 >
-                  <Button
-                    className="w-full"
-                    variant={isLightBackground ? "fill" : "fill_white"}
-                    as="a"
-                    size="sm"
-                    href="/contact"
-                    onClick={closeMobileMenu}
-                  >
-                    CONTACT
-                  </Button>
+                  <div className="flex flex-col gap-5 wrapper_btn_full">
+                    <ButtonLinear
+                      as="a"
+                      href="/contact"
+                      variant="jade_green"
+                      onClick={closeMobileMenu}
+                      className="w-full !max-w-full"
+                    >
+                      Contact Us
+                    </ButtonLinear>
+                    <ButtonLinear
+                      as="a"
+                      href="/sign-in"
+                      showIcon={false}
+                      className="linear-buttonBasic !py-3.5 !px-4 w-full !max-w-full"
+                      variant="basic"
+                      onClick={closeMobileMenu}
+                    >
+                      Login
+                    </ButtonLinear>
+                  </div>
                 </motion.div>
               </nav>
 

@@ -18,7 +18,13 @@ const ButtonLinear = ({
 
   // Định nghĩa color themes
   const colorThemes = {
-    basic: {},
+    basic: {
+      iconBackground: outline
+        ? "bg-transparent border border-[rgba(252,178,54,0.5)]"
+        : transparent
+        ? "bg-[rgba(252,178,54,0.2)]"
+        : "bg-[rgba(255,255,255,0.12)]",
+    },
     gold_button: {
       background: outline
         ? "bg-transparent"
@@ -48,10 +54,8 @@ const ButtonLinear = ({
         ? "bg-transparent"
         : transparent
         ? "bg-transparent"
-        : "bg-[rgb(18,59,56)]",
-      borderGradient: outline
-        ? "bg-gradient-to-r from-[rgba(23,66,62,1)] via-[rgba(155,255,249,1)] to-[rgba(23,66,62,1)]"
-        : "bg-gradient-to-r from-[rgba(23,66,62,1)] via-[rgba(155,255,249,1)] to-[rgba(23,66,62,1)]",
+        : "",
+      borderGradient: outline ? "linear-buttonJade" : "linear-buttonJade",
       borderGradientHover: outline
         ? "hover:from-[rgba(23,66,62,0.8)] hover:via-[rgba(155,255,249,1)] hover:to-[rgba(23,66,62,0.8)]"
         : "hover:from-[rgba(36,137,126,0.12)] hover:via-[rgba(155,255,249,1)] hover:to-[rgba(23,66,62,1)]",
@@ -97,6 +101,7 @@ const ButtonLinear = ({
 
   const buttonStyles = `
   min-w-[140px]
+  text-white
     relative inline-flex items-center justify-between
     w-auto h-11
     pl-5 pr-[10px] py-3

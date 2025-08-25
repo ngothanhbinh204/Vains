@@ -63,10 +63,11 @@ const DeliveryBanner = () => {
                 Learn More
               </ButtonLinear>
               <ButtonLinear
-                variant="gold_button"
+                className="linear-buttonBasic !py-3.5 !px-4"
+                variant="basic"
                 onClick={() => alert("Button clicked!")}
               >
-                Contact us
+                Contact Us
               </ButtonLinear>
             </div>
           </div>

@@ -135,7 +135,7 @@ const Timeline = () => {
               scale: 1,
             },
             {
-              backgroundColor: "rgba(6, 214, 160, 1)",
+              backgroundColor: "rgba(66, 195, 213, 1)",
               scale: 1.2,
               duration: 0.3,
               scrollTrigger: {
