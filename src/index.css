@@ -1,4 +1,6 @@
 @import "./styles/fonts.css";
+@import "devicon/devicon.min.css";
+
 @import "tailwindcss";
 
 @theme {
@@ -45,6 +47,41 @@
   /* Ví dụ cho easing function */
   --transition-timing-function-custom-bezier: cubic-bezier(0.14, 0.4, 0.09, 0.99);
   --shadow-itemCus: 0px 8px 32px rgba(0, 0, 0, 0.05);
+
+  /* Animations  */
+
+  --animate-float: float 3s ease-in-out infinite;
+  --animate-shadow-scale: shadow-scale 3s ease-in-out infinite;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  @keyframes shadow-scale {
+
+    0%,
+    100% {
+      transform: scaleX(1);
+    }
+
+    50% {
+      transform: scaleX(0.7);
+    }
+  }
+
+
+}
+
+:root {
+  --primary: rgba(66, 195, 213, 1);
 }
 
 @layer utilities {
@@ -52,10 +89,30 @@
     height: -webkit-fill-available;
     height: fill-available;
   }
+
+  .text-gradient-custom {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, rgba(186, 248, 255, 1), #42C3D5 100%);
+  }
 }
 
 body {
   background-color: rgba(4, 16, 14, 1);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  /* Ghi đè màu nền */
+  -webkit-box-shadow: 0 0 0 1000px #102e30 inset !important;
+  /* Ghi đè màu chữ */
+  -webkit-text-fill-color: #FFFFFF !important;
 }
 
 .wrapper {
@@ -339,6 +396,38 @@ a {
 }
 
 
+
+
+.linear-buttonBasic::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  padding: 1px;
+  /* background: linear-gradient(90deg, rgba(252, 178, 54, 0), rgba(155, 255, 249, 1), rgba(66, 195, 231, 0)); */
+  background: linear-gradient(90deg,
+
+      rgba(255, 255, 255, 0.16) 0%,
+      /* vàng mờ dần */
+      rgba(255, 255, 255, 0.16) 100%,
+    );
+
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.linear-buttonBasic {
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.16) 0%, rgba(14, 49, 54, 0.08) 100%);
+}
+
 @media (max-width: 768px) {
   img {
     object-position: center center;
@@ -374,4 +463,52 @@ a {
 
 .headline-container {
   perspective: 1000px;
+}
+
+.mascot-floating {
+  display: block;
+  margin: 0 auto;
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+    /* lên cao 15px */
+  }
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Thêm class animation */
+.animate-marquee-left {
+  animation: marquee-left 20s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 20s linear infinite;
 }

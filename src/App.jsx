@@ -9,6 +9,8 @@ import Pricing from "@/pages/Pricing";
 import Contact from "@/pages/Contact";
 
 import { HeaderThemeProvider } from "./context/HeaderThemeContext"; // đường dẫn đúng
+import SignIn from "./pages/Authen/SignIn";
+import SignUp from "./pages/Authen/SignUp";
 function App() {
   return (
     <HeaderThemeProvider>
@@ -19,6 +21,8 @@ function App() {
           <Route path="/pricing" element={<Pricing></Pricing>}></Route>
           <Route path="/technology" element={<Technology></Technology>}></Route>
           <Route path="/contact" element={<Contact></Contact>}></Route>
+          <Route path="/sign-in" element={<SignIn></SignIn>}></Route>
+          <Route path="/sign-up" element={<SignUp></SignUp>}></Route>
         </Routes>
       </MainLayout>
     </HeaderThemeProvider>

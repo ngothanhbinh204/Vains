@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Button from "../ui/Button";
 import { Spin as Hamburger } from "hamburger-react";
 import Logo from "@/assets/images/VainsLogo.svg";
-
+import ButtonLinear from "@/components/ui/ButtonLinear";
 import { useHeaderTheme } from "@/context/HeaderThemeContext";
 const Header = () => {
   const [showHeader, setShowHeader] = useState(true);
@@ -104,9 +104,9 @@ const Header = () => {
           y: showHeader ? 0 : -100,
           backgroundColor: isScrolled
             ? isLightBackground
-              ? "rgba(255, 255, 255, 0.8)" // Header nền trắng
-              : "rgba(0, 0, 0, 0.8)" // Header nền đen
-            : "rgba(0, 0, 0, 0)", // Khi chưa scroll
+              ? "rgba(255, 255, 255, 0.8)"
+              : "rgba(0, 0, 0, 0.8)"
+            : "rgba(0, 0, 0, 0)",
         }}
         transition={{ type: "tween", stiffness: 300, damping: 30 }}
         className={`fixed top-0 left-0 w-full z-[100] ${
@@ -469,9 +469,11 @@ const Header = () => {
           {/* Desktop Menu */}
           <nav className="hidden md:flex gap-8 items-center font-medium">
             {[
+              { label: "Home", to: "/" },
               { label: "Technology", to: "/technology" },
               { label: "Pricing", to: "/Pricing" },
               { label: "About", to: "/about" },
+              { label: "Blog", to: "/blog" },
             ].map((item) => (
               <motion.div key={item.to}>
                 <Link
@@ -487,19 +489,24 @@ const Header = () => {
                 </Link>
               </motion.div>
             ))}
-
-            <motion.div>
-              <Button
-                className="col-span-12 md:col-span-6"
-                variant={isLightBackground ? "fill" : "fill_white"}
-                as="a"
-                size="sm"
-                href="/contact"
-              >
-                CONTACT
-              </Button>
-            </motion.div>
           </nav>
+
+          <div className="flex flex-row gap-5">
+            <ButtonLinear
+              variant="jade_green"
+              onClick={() => alert("Button clicked!")}
+            >
+              Learn More
+            </ButtonLinear>
+            <ButtonLinear
+              showIcon={false}
+              className="linear-buttonBasic !py-3.5 !px-4"
+              variant="basic"
+              onClick={() => alert("Button clicked!")}
+            >
+              Login
+            </ButtonLinear>
+          </div>
 
           {/* Animated Hamburger Menu */}
           <div className="md:hidden text-white z-60 relative ">

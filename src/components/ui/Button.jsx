@@ -24,15 +24,15 @@ const Button = React.forwardRef(
 
     // Variant styles
     const variants = {
-      fill: "bg-black text-white hover:bg-white hover:text-black border-2 border-black",
+      fill: "transition-all duration-300 bg-primary text-white border-2 border-primary bg-gradient-to-r from-[rgba(58,180,191,1)] to-[rgba(66,195,213,1)] bg-[length:200%_100%] bg-left transition-all duration-500 hover:bg-right",
       fill_white:
-        "bg-white text-black hover:bg-black hover:text-white border-2 border-white ",
+        "bg-white text-primary hover:bg-primary hover:text-white border-2 border-white ",
       outline:
-        "bg-transparent text-black border-2 border-black hover:bg-black hover:text-white",
+        "bg-transparent text-primary border-2 border-primary hover:bg-primary hover:text-white",
       outline_white:
-        "bg-transparent text-white border-2 border-white hover:bg-white hover:text-black focus:ring-white",
+        "bg-transparent text-white border-2 border-white hover:bg-white hover:text-primary focus:ring-white",
       ghost:
-        "bg-transparent text-black hover:bg-gray-100 border-2 border-transparent focus:ring-gray-400",
+        "bg-transparent text-primary hover:bg-gray-100 border-2 border-transparent focus:ring-gray-400",
       primary:
         "bg-blue-600 text-white hover:bg-blue-700 border-2 border-blue-600 focus:ring-blue-500",
       danger:
@@ -44,7 +44,7 @@ const Button = React.forwardRef(
     // Size styles
     const sizes = {
       sm: "px-4 py-2 text-sm",
-      md: "px-6 py-3 text-sm",
+      md: "px-6 py-3 text-md",
       lg: "px-8 py-4 text-base",
       xl: "px-10 py-5 text-lg",
     };

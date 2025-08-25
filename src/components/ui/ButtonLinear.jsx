@@ -9,13 +9,16 @@ const ButtonLinear = ({
   className = "",
   variant,
   transparent = false,
-  outline = false, // Thêm prop outline cho viền only
+  outline = false,
+  // Thêm prop showIcon với giá trị mặc định là true
+  showIcon = true,
   ...props
 }) => {
   const Component = as;
 
   // Định nghĩa color themes
   const colorThemes = {
+    basic: {},
     gold_button: {
       background: outline
         ? "bg-transparent"
@@ -90,10 +93,10 @@ const ButtonLinear = ({
     },
   };
 
-  // Lấy theme hiện tại
   const currentTheme = colorThemes[variant] || colorThemes.gold_button;
 
   const buttonStyles = `
+  min-w-[140px]
     relative inline-flex items-center justify-between
     w-auto h-11
     pl-5 pr-[10px] py-3
@@ -102,7 +105,7 @@ const ButtonLinear = ({
     ${currentTheme.textColor} text-base
     transition-all duration-300 ease-in-out
     hover:shadow-lg ${currentTheme.shadowColor}
-    active:scale-95 font-helvetica-light cursor-pointer
+    active:scale-95 cursor-pointer
     ${transparent ? "backdrop-blur-sm" : ""}
     ${className}
   `;
@@ -130,12 +133,16 @@ const ButtonLinear = ({
 
   const ButtonContent = () => (
     <>
-      <span className="flex-1 text-left">{children}</span>
-      <div
-        className={`ml-2.5 w-8 h-8 ${currentTheme.iconBackground} rounded-full flex items-center justify-center transition-colors`}
-      >
-        <GoArrowRight size={20} />
-      </div>
+      <span className="flex-1 text-center">{children}</span>
+      {/* Sử dụng showIcon để render icon có điều kiện */}
+      {showIcon && (
+        <div
+          className={`ml-2.5 w-8 h-8 ${currentTheme.iconBackground} rounded-full flex items-center justify-center transition-colors`}
+        >
+          <GoArrowRight size={20} />
+        </div>
+      )}
+      {/* {!showIcon && <span className="ml-2.5 w-8 h-8"></span>} */}
     </>
   );
 
@@ -162,7 +169,6 @@ const ButtonLinear = ({
         </div>
       </div>
     );
-
     return <OutlineButton />;
   }
 

@@ -40,7 +40,7 @@ const TitlePageTech = (props) => {
       <LightSpot size={700} top="-40%" left="72%" />
 
       <div className="banner-content relative z-10 flex flex-col justify-center items-center h-full text-white">
-        <div className="flex flex-col max-w-[430px] mx-auto px-4 md:px-6 ">
+        <div className="flex flex-col max-w-[500px] mx-auto px-4 md:px-6 ">
           <h1
             className="text-4xl lg:text-[64px] font-bold bg-clip-text text-transparent mb-4 mx-auto w-max"
             style={{
@@ -65,7 +65,7 @@ const TitlePageTech = (props) => {
             ))}
           </div>
         </div>
-        <div className="text-start bg-gradient-to-t from-colorBlackTheme to-transparent z-10">
+        <div className="text-start w-full bg-gradient-to-t from-colorBlackTheme to-transparent z-10">
           <MissionSection
             image={TechImage}
             sectionLabel="TECHNOLOGY"

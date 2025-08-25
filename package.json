@@ -12,6 +12,7 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.11",
+    "devicon": "^2.17.0",
     "framer-motion": "^12.23.9",
     "hamburger-react": "^2.5.2",
     "lucide-react": "^0.533.0",
